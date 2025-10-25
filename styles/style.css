@@ -1,0 +1,386 @@
+:root {
+  --bg: #FFF5EE;             /* lower soft color */
+  --hero-bg: #E37383;        /* top hero color */
+
+  --ivory: #FDF8F6;          /* hero text */
+
+  --accent-champagne: 245, 231, 200;
+  --accent-pink:       227, 115, 131;
+  --accent-lavender:   230, 223, 245;
+  --accent-blue:       215, 233, 247;
+
+  --font-heading: "Lora", ui-serif, Georgia, serif;
+  --font-body: "Inter", ui-sans-serif, system-ui;
+  --h1-size: clamp(2.4rem, 5vw, 3.4rem);
+}
+
+/* body background is lower color */
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: var(--font-body);
+  color: #111214;
+}
+
+/* HERO back to original proportions */
+.hero {
+  position: relative;
+  min-height: 60vh;           /* was 80vh before */
+  display: grid;
+  place-items: center start;
+  padding: 12vh 8vw;          /* restore original top feel */
+  overflow: hidden;
+  background: var(--hero-bg);
+}
+
+/* hero text */
+.hero__inner {
+  width: min(40%, 640px);
+}
+.hero__name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--h1-size);
+  color: var(--ivory);
+  margin: 0;
+}
+
+/* spotlight */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -30vmin;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 24% 38%,
+      rgba(255, 255, 255, 0.22) 0%,
+      rgba(var(--accent-champagne), 0.28) 22%,
+      rgba(var(--accent-pink), 0.22) 40%,
+      transparent 70%
+    );
+  filter: blur(40vmin);
+  opacity: 0;
+  transition: opacity 950ms cubic-bezier(.2,.8,.2,1) 250ms;
+}
+body.is-loaded .hero::before {
+  opacity: 0.75;
+}
+
+/* Soft arch separator */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: #FFF5EE;  /* lower section color */
+  mask-image: url("data:image/svg+xml,%3Csvg width='1440' height='120' viewBox='0 0 1440 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 120V40c240 50 480 50 720 0s480-50 720 0v80H0z' fill='white'/%3E%3C/svg%3E");
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: top;
+  pointer-events: none;
+}
+
+
+/* scroll indicator */
+.scroll-indicator {
+  background: none;
+  border: none;
+  margin-top: 18vh;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity .25s ease;
+}
+.scroll-indicator:hover { opacity: 1; }
+.scroll-indicator svg {
+  stroke: currentColor;
+  color: #FDF8F6;
+  animation: float 1600ms ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+/* Align ABOUT exactly with hero text */
+.section {
+  padding: 6rem 8vw;    /* horizontal spacing now matches hero */
+}
+.container {
+  margin: 0;            /* no auto-centering */
+  max-width: 600px;     /* same narrow column feel */
+}
+/* ABOUT text sizing refinement */
+.section--about h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.4rem); /* larger heading */
+  margin-bottom: 1.2rem;
+  color: #111214;
+}
+
+/* spacing & style for multiple paragraphs */
+.section--about p {
+  margin: 1.2rem 0;       /* more spacing between lines */
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
+
+/* separate greeting from the name nicely */
+.about-intro {
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+  font-size: 1.25rem;
+}
+
+/* --- TOP NAVIGATION (V2 CLEAN RESTORE) --- */
+
+.top-nav {
+  position: fixed;
+  top: 1.5rem;
+  right: 3rem;
+  display: flex;
+  gap: 2rem;
+  z-index: 1000;
+  background: none;              /* no bar */
+  padding: 0;                    /* remove leftover padding */
+}
+
+/* container for the links */
+.nav-inner {
+  display: flex;
+  gap: 2rem;
+}
+
+/* ivory on hero */
+.top-nav a {
+  text-decoration: none;
+  color: var(--ivory);
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  opacity: 1;
+  transition: color 0.25s ease;
+}
+
+/* switch to charcoal once scrolled */
+body.scrolled .top-nav a {
+  color: #111214;
+}
+
+/* ---------------- SKILLS (GRID) ---------------- */
+
+.section--skills {
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.skills-container h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3vw, 2.4rem);
+  margin-bottom: 3rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skills-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.skills-item h3 {
+  font-family: var(--font-body);   /* matches paragraph font */
+  font-weight: 600;                /* bold but clean */
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;           /* a little more breathing room */
+}
+
+
+.skills-item p {
+  margin: 0;
+  font-size: 1rem;          /* slightly larger */
+  line-height: 1.75;        /* more breathing room */
+  letter-spacing: 0.2px;    /* subtle spacing improves readability */
+  opacity: 0.9;
+}
+
+/* Grid adjustments already applied above. Now add icon hover tint */
+
+.skills-icon svg {
+  stroke: #7384E3;                     /* NEW default icon color */
+  transition: stroke 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
+}
+
+.skills-item:hover .skills-icon svg {
+  stroke: rgba(var(--accent-pink), 1); /* hover stays soft pink */
+}
+
+/* ---------------- EXPERIENCE TIMELINE (UPDATED) ---------------- */
+
+.section--experience {
+  padding-top: 8rem;
+}
+
+.section--experience h2 {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 4rem;
+}
+
+/* timeline container now matches About alignment */
+.timeline {
+  position: relative;
+  margin-left: 0;           /* align left with container */
+  padding-left: 2.5rem;     /* space for the line + markers */
+  max-width: 1000px;         /* same readable width */
+}
+
+/* vertical gradient line moved further left */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;               /* previously 20% (center), now in left gutter */
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, #7384E3, rgba(var(--accent-pink),1));
+  border-radius: 4px;
+  opacity: 0.8;
+}
+
+/* each item */
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* marker */
+.timeline-marker {
+  position: absolute;
+  left: -1.9rem;
+  top: 0.4rem;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #7384E3;
+  background: var(--bg);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+/* smaller markers for education */
+.timeline-marker.small {
+  width: 9px;
+  height: 9px;
+  border-width: 1.6px;
+}
+
+/* date now sits beside marker */
+.timeline-date {
+  margin-left: 3rem;        /* breathing room from marker */
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+/* content after date */
+.timeline-content {
+  margin-left: 3rem;
+}
+
+.timeline-role {
+  font-weight: 600;
+  margin: 0 0 0.2rem;
+  font-size: 1.05rem;
+}
+
+.timeline-org {
+  margin: 0 0 0.6rem;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.timeline-content ul {
+  list-style-type: disc;
+  padding-left: 1rem; /* bullet indent */
+  margin: 0;
+}
+
+.timeline-content li {
+  margin-bottom: 0.45rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* fade/slide animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------- CONTACT ---------------- */
+
+.section--contact {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 720px;          /* slightly wider than About */
+  margin: 0 auto;
+}
+
+.section--contact h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  margin-bottom: 1.8rem;
+}
+
+.contact-text {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  line-height: 1.7;
+  margin-bottom: 2.8rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.05rem;
+  color: #7384E3;
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.contact-link:hover {
+  color: rgba(var(--accent-pink), 1);
+  transform: translateY(-2px);
+}

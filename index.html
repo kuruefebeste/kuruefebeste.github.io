@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beste Kuruefe</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+
+  <nav class="top-nav">
+    <div class="nav-inner">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+
+  <main id="main">
+    <section class="hero" aria-label="Intro">
+      <div class="hero__inner">
+        <h1 class="hero__name"> Beste Kuruefe </h1>
+
+        <!-- scroll indicator -->
+        <button class="scroll-indicator" aria-label="Scroll to About" data-scroll="#about" title="Scroll">
+          <svg width="20" height="28" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 16l-6-6h12l-6 6z" stroke="currentColor" fill="none" stroke-width="1.4"
+              stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <section id="about" class="section section--about" aria-label="About">
+    <div class="container">
+        <h2>About</h2>
+        <p class="about-intro">Hi! 👋🏼 I am Beste. </p>
+        <p>I am a senior at Colby College majoring in Computer Science with a concentration in AI and minoring in Dance.
+        I am passionate about the process of creating and building things — whether it is assembling software programs out of smaller components or shaping a full dance piece from short movement phrases. I plan to pursue a career in software engineering after graduation, and I am also curious about ways technology and dance can intersect.</p>
+        <p>In my free time, I enjoy dancing, swimming, traveling to new places and exploring new cuisines (especially street food!), and visiting cute cafés.</p>
+    </div>
+    </section>
+
+      <section id="skills" class="section section--skills" aria-label="Skills">
+    <div class="skills-container">
+      <h2>Skills</h2>
+
+      <div class="skills-grid">
+
+        <!-- Languages -->
+        <div class="skills-item">
+          <div class="skills-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
+                stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 18l6-6-6-6"/>
+              <path d="M8 6l-6 6 6 6"/>
+            </svg>
+          </div>
+          <h3>Languages</h3>
+          <p>Python · Java</p>
+        </div>
+
+        <!-- Web & Frameworks -->
+        <div class="skills-item">
+          <div class="skills-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
+                stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M2.5 12h19"/>
+              <path d="M12 2.5c2.5 3 2.5 16 0 19"/>
+            </svg>
+          </div>
+          <h3>Web &amp; Frameworks</h3>
+          <p>HTML · CSS · Spring Boot · Angular · Flask</p>
+        </div>
+
+        <!-- Data & ML -->
+        <div class="skills-item">
+          <div class="skills-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
+                stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 20V10"/>
+              <path d="M9 20V4"/>
+              <path d="M14 20V14"/>
+              <path d="M19 20V7"/>
+            </svg>
+          </div>
+          <h3>Data &amp; ML</h3>
+          <p>Pandas · NumPy · Matplotlib · scikit-learn · SciPy · Jupyter Notebook · RStudio</p>
+        </div>
+
+        <!-- Backend & Tools -->
+        <div class="skills-item">
+          <div class="skills-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
+                stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.5 20.5l-7-7 7-7"/>
+              <path d="M13.5 3.5l7 7-7 7"/>
+            </svg>
+          </div>
+          <h3>Backend &amp; Tools</h3>
+          <p>MongoDB · NoSQL data modeling · Git · IntelliJ · API design</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section section--experience" aria-label="Experience">
+    <div class="container">
+      <h2>Experience</h2>
+
+      <div class="timeline">
+
+        <!-- Goldman Sachs -->
+        <div class="timeline-item fade-in">
+          <div class="timeline-marker"></div>
+          <p class="timeline-date">Jun 2025 – Aug 2025</p>
+          <div class="timeline-content">
+            <h3 class="timeline-role">Engineering Summer Analyst</h3>
+            <p class="timeline-org">Goldman Sachs — New York City</p>
+            <ul>
+              <li>Engineered Spring Boot abstraction layers (Controller, Service, Repository), launching a scalable project architecture</li>
+              <li>Built a MongoDB collection from a specified data model, aggregating data from multiple sources to improve retrieval efficiency</li>
+              <li>Developed a dynamic Angular dashboard, delivering an intuitive UI that streamlined users’ workflow</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SEO -->
+        <div class="timeline-item fade-in">
+          <div class="timeline-marker"></div>
+          <p class="timeline-date">May 2024 – Aug 2024</p>
+          <div class="timeline-content">
+            <h3 class="timeline-role">Software Engineering Intern</h3>
+            <p class="timeline-org">SEO Tech Developer Program - Remote</p>
+            <ul>
+              <li>Completed 300+ hours of software engineering training focused on data structures, algorithms, and full-stack development</li>
+              <li>Developed full-stack web applications using Python (Flask), SQL, HTML/CSS, JavaScript, and REST API integrations</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Research Assistant -->
+        <div class="timeline-item fade-in">
+          <div class="timeline-marker"></div>
+          <p class="timeline-date">Feb 2024 – Present</p>
+          <div class="timeline-content">
+            <h3 class="timeline-role">Research Assistant</h3>
+            <p class="timeline-org">Colby Davis Institute for Artificial Intelligence — Waterville, ME</p>
+            <ul>
+              <li>Developing a machine-learning dance genre classifier to analyze stylistic and structural features in movement</li>
+              <li>Visualizing movement attributes (expandedness, angular momentum) to improve classifier interpretability</li>
+              <li>Integrating a new movement dataset to strengthen the comprehensiveness of the research pipeline</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Teaching Assistant -->
+        <div class="timeline-item fade-in">
+          <div class="timeline-marker"></div>
+          <p class="timeline-date">Feb 2024 – Present</p>
+          <div class="timeline-content">
+            <h3 class="timeline-role">Teaching Assistant</h3>
+            <p class="timeline-org">Colby Computer Science Department — Waterville, ME</p>
+            <ul>
+              <li>Supported students through personalized guidance and clarifying lecture concepts</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- IT Multimedia Technician -->
+        <div class="timeline-item fade-in">
+          <div class="timeline-marker"></div>
+          <p class="timeline-date">Sep 2022 – Present</p>
+          <div class="timeline-content">
+            <h3 class="timeline-role">Multimedia Technician</h3>
+            <p class="timeline-org">Colby ITS Event Services — Waterville, ME</p>
+            <ul>
+              <li>Ensured seamless multimedia experiences by diagnosing and resolving audiovisual issues during campus events</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- DIS Study Abroad -->
+        <div class="timeline-item fade-in education">
+          <div class="timeline-marker small"></div>
+          <p class="timeline-date">Jan 2025 – May 2025</p>
+          <div class="timeline-content">
+            <h3 class="timeline-role">Study Abroad — DIS Copenhagen (Denmark)</h3>
+            <ul>
+              <li>Spring semester focused on cross-cultural learning and academic immersion</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Colby College -->
+        <div class="timeline-item fade-in education">
+          <div class="timeline-marker small"></div>
+          <p class="timeline-date">Sep 2022 – May 2026</p>
+          <div class="timeline-content">
+            <h3 class="timeline-role">Bachelor in Computer Science: AI & Dance Minor — Colby College</h3>
+            <ul>
+              <li>Waterville, ME</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section section--contact" aria-label="Contact">
+    <div class="contact-container fade-in">
+      <h2>Get in Touch</h2>
+      <p class="contact-text">
+        Whether you’d like to connect about opportunities, collaborations, or just say hi — I’d love to hear from you!
+      </p>
+
+      <div class="contact-links">
+        <a href="mailto:bestekuruefe@gmail.com" class="contact-link" aria-label="Email">
+          <!-- Email Icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16v16H4z"/>
+            <path d="M4 4l8 8 8-8"/>
+          </svg>
+          Email
+        </a>
+
+        <a href="https://www.linkedin.com/in/beste-kuruefe/" target="_blank" class="contact-link" aria-label="LinkedIn">
+          <!-- LinkedIn Icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-2-2h-1a2 2 0 0 0-2 2v6h-4v-6a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+
+        <a href="https://github.com/kuruefebeste" target="_blank" class="contact-link" aria-label="GitHub">
+          <!-- GitHub Icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-4.5 1.5-4.5-2.5-6-3m12 6v-3.87c0-.96-.1-1.91-1-2.63 3 .33 6-1.52 6-5.46A4.58 4.58 0 0 0 18 4.77 4.38 4.38 0 0 0 17.91 1S16.73.67 14 2.48a13.38 13.38 0 0 0-10 0C1.27.67.09 1 .09 1a4.38 4.38 0 0 0-.09 3.77A4.58 4.58 0 0 0 0 9c0 3.94 3 5.79 6 5.46-.9.72-1 1.67-1 2.63V22"/>
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  </main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
