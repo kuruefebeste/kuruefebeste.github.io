@@ -1,3 +1,12 @@
+// smooth scroll for hero scroll button
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-scroll]');
+  if (!btn) return;
+  const sel = btn.getAttribute('data-scroll');
+  const target = document.querySelector(sel);
+  if (target) target.scrollIntoView({ behavior: 'smooth' });
+});
+
 // timeline reveal on scroll
 const timelineItems = document.querySelectorAll('.fade-in');
 
