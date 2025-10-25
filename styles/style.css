@@ -25,7 +25,7 @@ body {
 /* HERO back to original proportions */
 .hero {
   position: relative;
-  min-height: 60vh;           /* was 80vh before */
+  min-height: 62vh;           /* was 80vh before */
   display: grid;
   place-items: center start;
   padding: 12vh 8vw;          /* restore original top feel */
@@ -126,6 +126,37 @@ body.is-loaded .hero::before {
   font-size: 1.15rem;
   line-height: 1.75;
 }
+
+.about-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-photo img {
+  width: 260px;
+  height: auto;
+  border-radius: 18px;
+  object-fit: cover;
+  display: block;
+}
+
+/* responsive: stack on small screens */
+@media (max-width: 820px) {
+  .about-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-photo img {
+    width: 200px;
+  }
+}
+
 
 /* separate greeting from the name nicely */
 .about-intro {
