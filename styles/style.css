@@ -389,7 +389,7 @@ body.scrolled .top-nav a {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: rgba(115, 132, 227, 0.25);  /* lavender */
+  background: rgba(227, 115, 132, 0.38);  /* updated to #E37384 w/opacity */
   pointer-events: none;
   transform: translate(-50%, -50%);
   transition: opacity 2.2s ease-out;
