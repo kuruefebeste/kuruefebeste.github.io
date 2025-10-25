@@ -22,7 +22,7 @@ body {
   color: #111214;
 }
 
-/* HERO back to original proportions */
+/* HERO */
 .hero {
   position: relative;
   min-height: 62vh;           /* was 80vh before */
@@ -165,7 +165,7 @@ body.is-loaded .hero::before {
   font-size: 1.25rem;
 }
 
-/* --- TOP NAVIGATION (V2 CLEAN RESTORE) --- */
+/* --- TOP NAVIGATION --- */
 
 .top-nav {
   position: fixed;
@@ -273,7 +273,7 @@ body.scrolled .top-nav a {
   margin-bottom: 4rem;
 }
 
-/* timeline container now matches About alignment */
+/* timeline container matches About alignment */
 .timeline {
   position: relative;
   margin-left: 0;           /* align left with container */
@@ -376,7 +376,7 @@ body.scrolled .top-nav a {
   position: absolute;
   top: 4vw;
   right: 8vw;
-  width: 32vw;              /* ~W2: 30–35% */
+  width: 32vw;              /* 30–35% */
   height: 100%;
   pointer-events: auto;     /* no scroll/mouse issues */
   overflow: hidden;
