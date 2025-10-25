@@ -262,6 +262,7 @@ body.scrolled .top-nav a {
 /* ---------------- EXPERIENCE TIMELINE (UPDATED) ---------------- */
 
 .section--experience {
+  position: relative;
   padding-top: 8rem;
 }
 
@@ -368,6 +369,32 @@ body.scrolled .top-nav a {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* --- INTERACTIVE INK AREA (EXPERIENCE) --- */
+
+.ink-area {
+  position: absolute;
+  top: 4vw;
+  right: 8vw;
+  width: 32vw;              /* ~W2: 30–35% */
+  height: 100%;
+  pointer-events: auto;     /* no scroll/mouse issues */
+  overflow: hidden;
+  z-index: 1;                /* keep dots above content on the right */
+}
+
+/* individual ink strokes (generated dynamically) */
+.ink-dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(115, 132, 227, 0.25);  /* lavender */
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: opacity 2.2s ease-out;
+}
+
 
 /* ---------------- CONTACT ---------------- */
 

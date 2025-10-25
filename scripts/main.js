@@ -27,3 +27,28 @@ function onScroll() {
 }
 onScroll();
 window.addEventListener('scroll', onScroll);
+
+// --- INTERACTIVE INK AREA --- //
+const inkArea = document.querySelector('.ink-area');
+
+if (inkArea) {
+  inkArea.addEventListener('mousemove', (e) => {
+    const rect = inkArea.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const dot = document.createElement('div');
+    dot.className = 'ink-dot';
+    dot.style.left = `${x}px`;
+    dot.style.top = `${y}px`;
+
+    inkArea.appendChild(dot);
+
+    // fade out + remove after 1.5s
+    setTimeout(() => {
+      dot.style.opacity = 0;
+      setTimeout(() => dot.remove(), 15000);
+    }, 50);
+  });
+}
+
